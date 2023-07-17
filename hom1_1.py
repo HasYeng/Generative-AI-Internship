@@ -108,7 +108,6 @@ def driving(vehicle):
     print("**")
 
 
-# Testing the hierarchy of classes
 car = Car("Yellow", 500000, "Koenigsegg")
 motorcycle = Motorcycle("Red", 22000, "Harley-Davidson")
 bicycle = Bicycle("Black", 1000, 22)
