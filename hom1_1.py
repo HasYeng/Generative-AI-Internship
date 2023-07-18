@@ -37,19 +37,13 @@ class DatabaseStorage(Storage):
     def delete(self):
         print("Delete from database")
 
-
-# 2
-
+#2
 class Meta(type):
-    def __new__(cls, name, bases, attrs):
-        attrs['__setattr__'] = Meta.__setattr__
-        return super().__new__(cls, name, bases, attrs)
-
-    def __setattr__(self, key, value):
-        if key in self.__annotations__:
-            if not isinstance(value, self.__annotations__[key]):
+    def __setattr__(cls, key, value):
+        if key in cls.__annotations__:
+            if not isinstance(value, cls.__annotations__[key]):
                 raise TypeError(f"Invalid type for {key}")
-        object.__setattr__(self, key, value)
+        super().__setattr__(cls, key, value)
 
 
 class MyClass(metaclass=Meta):
