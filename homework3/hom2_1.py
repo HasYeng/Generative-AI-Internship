@@ -41,7 +41,6 @@ class Point(metaclass=SlottedStruct):
     pass
 
 
-# Testing with Point2D and Point3D
 class Point2D(Point):
     dim = 2
 
